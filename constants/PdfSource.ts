@@ -1,0 +1,1 @@
+export const PdfSource = { uri: 'bundle-assets://Algorithmen.pdf' };
