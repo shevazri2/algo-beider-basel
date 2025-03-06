@@ -13,6 +13,7 @@ export function AlgoListItem({ title, keyId, pediatricKeyId, pages }: Props) {
   const colorScheme = useColorScheme();
 
   const themedListItem = colorScheme === 'light' ? styles.listItemLight : styles.listItemDark;
+  const themedTitleContainer = colorScheme === 'light' ? styles.titleContainerLight : styles.titleContainerDark;
 
   return (
     <View style={[styles.listItem, themedListItem]}>
@@ -21,7 +22,7 @@ export function AlgoListItem({ title, keyId, pediatricKeyId, pages }: Props) {
       ) : (
         <View style={styles.keyBasic}></View>
       )}
-      <Text style={styles.titleContainer}>{title}</Text>
+      <Text style={[styles.titleContainer, themedTitleContainer]}>{title}</Text>
       {
         pediatricKeyId ? (
           <Text style={[styles.keyBasic, styles.pediatricKeyId]}>{ pediatricKeyId }</Text>
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
   listItemDark: {
     backgroundColor: ThemeColors.darkBlue,
     color: ThemeColors.white,
-    borderColor: ThemeColors.lightBlue,
+    borderColor: ThemeColors.black,
   },
   listItemLight: {
     backgroundColor: ThemeColors.lightBlue,
@@ -105,6 +106,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     display: 'flex',
+  },
+  titleContainerDark: {
+    color: ThemeColors.white,
+  },
+  titleContainerLight: {
+    color: ThemeColors.black,
   },
   linkWrapper: {
     position: 'absolute',
