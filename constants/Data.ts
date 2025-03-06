@@ -10,8 +10,15 @@ export type AlgoType = {
   pages: Array<Array<number>>,
 }
 
+export type DrugsType = {
+  title: string,
+  page: number,
+  categories?: Array<number> //1 = all, 2 = RS+NA, 3=NA, 4=DA Kardio
+}
+
 export type AppDataType = {
   sections: Array<SectionType>
+  drugs: Array<DrugsType>
 }
 
 export const AppData = {
@@ -286,6 +293,175 @@ export const AppData = {
           pages: [[161]]
         }
       ]
+    }
+  ],
+  drugs: [
+    {
+      title: 'Verdünnungs-Schemata',
+      page: 203,
+    }, {
+      title: 'Perfusor-Schemata',
+      page: 204,
+    }, {
+      title: 'Acetylsalicylsäure', 
+      page: 163,
+      categories: [1]
+    }, {
+      title: 'Adenosin',
+      page: 164,
+      categories: [3]
+    }, {
+      title: 'Adrenalin',
+      page: 165,
+      categories: [1, 2, 3]
+    }, {
+      title: 'Aktivkohle',
+      page: 166,
+      categories: [1]
+    }, {
+      title: 'Amiodaron',
+      page: 167,
+      categories: [1, 2]
+    }, {
+      title: 'Atropin',
+      page: 168,
+      categories: [1, 2]
+    }, {
+      title: 'Butylscopolamin',
+      page: 169,
+      categories: [1]
+    }, {
+      title: 'Clemastin',
+      page: 170,
+      categories: [1]
+    }, {
+      title: 'Ephedrin',
+      page: 171,
+      categories: [2]
+    }, {
+      title: 'Esmolol',
+      page: 172,
+      categories: [3]
+    }, {
+      title: 'Fentanyl',
+      page: 173,
+      categories: [1]
+    }, {
+      title: 'Flumazenil',
+      page: 174,
+      categories: [1]
+    }, {
+      title: 'Furosemid',
+      page: 175,
+      categories: [1]
+    }, {
+      title: 'Glucose',
+      page: 176,
+      categories: [1]
+    }, {
+      title: 'Heparin',
+      page: 177,
+      categories: [4]
+    }, {
+      title: 'Hexoprenalin',
+      page: 178,
+      categories: [3]
+    }, {
+      title: 'Ketamin',
+      page: 179,
+      categories: [1, 2]
+    }, {
+      title: 'Labetalol',
+      page: 180,
+      categories: [2, 3]
+    }, {
+      title: 'Levetiracetam',
+      page: 181,
+      categories: [2]
+    }, {
+      title: 'Lidocain',
+      page: 182,
+      categories: [1]
+    }, {
+      title: 'Magnesiumsulfat',
+      page: 183,
+      categories: [1, 2]
+    }, {
+      title: 'Metamizol',
+      page: 184,
+      categories: [1]
+    }, {
+      title: 'Methylprednisolon',
+      page: 185,
+      categories: [1]
+    }, {
+      title: 'Midazolam',
+      page: 186,
+      categories: [1, 2, 3]
+    }, {
+      title: 'Morphin',
+      page: 187,
+      categories: [1]
+    }, {
+      title: 'Nalbuphin',
+      page: 188,
+      categories: [1, 2]
+    }, {
+      title: 'Naloxon',
+      page: 189,
+      categories: [1]
+    }, {
+      title: 'Nitroglycerin',
+      page: 190,
+      categories: [1]
+    }, {
+      title: 'Noradrenalin',
+      page: 191,
+      categories: [3]
+    }, {
+      title: 'Ondansetron',
+      page: 192,
+      categories: [1]
+    }, {
+      title: 'Oxybuprocaine',
+      page: 193,
+      categories: [1]
+    }, {
+      title: 'Oxytocin',
+      page: 194,
+      categories: [2]
+    }, {
+      title: 'Paracetamol',
+      page: 195,
+      categories: [1]
+    }, {
+      title: 'Phenylephrin',
+      page: 196, 
+      categories: [2]
+    }, {
+      title: 'Propofol',
+      page: 197,
+      categories: [3]
+    }, {
+      title: 'Rocuronium',
+      page: 198,
+      categories: [3]
+    }, {
+      title: 'Salbutamol / Ipratropiumbromid',
+      page: 199,
+      categories: [1]
+    }, {
+      title: 'Ticagrelor',
+      page: 200,
+      categories: [4]
+    }, {
+      title: 'Tranexamsäure',
+      page: 201,
+      categories: [1]
+    }, {
+      title: 'Urapidil',
+      page: 202,
+      categories: [1, 2]
     }
   ]
 } as AppDataType;

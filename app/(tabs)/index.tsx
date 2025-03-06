@@ -1,7 +1,9 @@
 import { AlgoListItem } from '@/components/AlgoListItem';
+import { ThemeColors } from '@/constants/Colors';
 import { AppData, SectionType } from '@/constants/Data';
+import { useThemeColor } from '@/hooks/useThemeColor';
 import React from 'react';
-import { SectionList, StyleSheet, Text, TextInput, View } from 'react-native';
+import { SectionList, StyleSheet, Text, TextInput, useColorScheme, View } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
 
@@ -9,6 +11,10 @@ import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 export default function HomeScreen() {
   const [query, setQuery] = React.useState('');
   const [sections, setSections] = React.useState(AppData.sections);
+  const colorScheme = useColorScheme();
+
+  const sectionHeaderThemed = colorScheme === 'light' ? styles.sectionHeaderLight : styles.sectionHeaderDark;
+
 
   const onChangeQuery = (input: string) => {
     setQuery(input);
@@ -60,7 +66,7 @@ export default function HomeScreen() {
           )}
           renderSectionHeader={({section: {title}}) => (
 
-            <Text style={styles.sectionHeader}>{title}</Text>
+            <Text style={[styles.sectionHeader, sectionHeaderThemed]}>{title}</Text>
           )}
         >
         </SectionList>
@@ -74,21 +80,29 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   sectionHeader: {
-    backgroundColor: 'blue',
     textAlign: 'center',
-    color: 'white',
     fontSize: 24,
     paddingVertical: 6,
   },
+  sectionHeaderDark: {
+    backgroundColor: ThemeColors.black,
+    color: ThemeColors.white,
+  },
+  sectionHeaderLight: {
+    backgroundColor: ThemeColors.darkBlue,
+    color: ThemeColors.white,
+  },
   queryContainer: {
-    backgroundColor: 'grey',
+    backgroundColor: ThemeColors.lightBlue,
     padding: 9,
   },
   queryInput: {
-    backgroundColor: 'white',
+    backgroundColor: ThemeColors.white,
     padding: 9,
     height: 40,
     fontSize: 18,
+    borderWidth: 1,
+    borderColor: ThemeColors.darkBlue,
   }
 });
 

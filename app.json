@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "algo-beider-basel",
+    "name": "Algorithmen beider Basel",
     "slug": "algo-beider-basel",
-    "version": "1.0.0",
+    "version": "0.9.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -31,7 +31,7 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#c6d9f1"
         }
       ],
       "@config-plugins/react-native-blob-util",

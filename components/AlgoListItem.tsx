@@ -1,5 +1,6 @@
+import { ThemeColors } from "@/constants/Colors";
 import { Link } from "expo-router"
-import { StyleSheet, Text, View } from "react-native"
+import { StyleSheet, Text, useColorScheme, View } from "react-native"
 
 type Props = {
   title: string,
@@ -9,11 +10,12 @@ type Props = {
 }
 
 export function AlgoListItem({ title, keyId, pediatricKeyId, pages }: Props) {
+  const colorScheme = useColorScheme();
 
-  console.log('pages', pages);
+  const themedListItem = colorScheme === 'light' ? styles.listItemLight : styles.listItemDark;
 
   return (
-    <View style={styles.listItem}>
+    <View style={[styles.listItem, themedListItem]}>
       { keyId ? (
         <Text style={[styles.keyBasic, styles.keyId]}>{keyId}</Text>
       ) : (
@@ -59,12 +61,23 @@ export function AlgoListItem({ title, keyId, pediatricKeyId, pages }: Props) {
 
 const styles = StyleSheet.create({
   listItem: {
-    backgroundColor: 'lightblue',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'nowrap',
     padding: 5,
     position: 'relative',
+    borderBottomWidth: 1,
+    borderStyle: 'solid',
+  },
+  listItemDark: {
+    backgroundColor: ThemeColors.darkBlue,
+    color: ThemeColors.white,
+    borderColor: ThemeColors.lightBlue,
+  },
+  listItemLight: {
+    backgroundColor: ThemeColors.lightBlue,
+    color: ThemeColors.black,
+    borderColor: ThemeColors.darkBlue
   },
   keyBasic: {
     flexBasis: 50,
@@ -76,20 +89,21 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
   },
   keyId: {
-    backgroundColor: 'yellow',
-    borderColor: 'black',
+    backgroundColor: ThemeColors.tintYellow,
+    borderColor: ThemeColors.tintYellowDark,
     borderWidth: 1,
   },
   pediatricKeyId: {
-    backgroundColor: 'pink',
-    borderColor: 'black',
+    backgroundColor: ThemeColors.tintRed,
+    borderColor: ThemeColors.tintRedDark,
     borderWidth: 1,
   },
   titleContainer: {
     flex: 1,
     textAlignVertical: 'center',
     paddingHorizontal: 10,
-    fontSize: 20,
+    fontSize: 16,
+    fontWeight: 'bold',
     display: 'flex',
   },
   linkWrapper: {

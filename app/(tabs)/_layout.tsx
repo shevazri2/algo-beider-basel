@@ -44,7 +44,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="completePdf"
         options={{
-          title: 'Komplett',
+          title: 'PDF',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="doc.text" color={color} />,
         }}
       />
