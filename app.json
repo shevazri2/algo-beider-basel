@@ -2,7 +2,7 @@
   "expo": {
     "name": "Algorithmen beider Basel",
     "slug": "algo-beider-basel",
-    "version": "0.9.2",
+    "version": "0.9.3",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
