@@ -37,7 +37,7 @@ export default function InfoScreen() {
       />
       <View style={styles.versionInfo}>
         <Text style={styles.versionLabel}>Algorithmen-Version: 1.1</Text>
-        <Text style={styles.versionLabel}>App-Version: 0.9.9</Text>
+        <Text style={styles.versionLabel}>App-Version: 1.0.0</Text>
       </View>
       <View>
         <Image style={{flex: 1, width: Dimensions.get('window').width, paddingTop: '40%'}}
