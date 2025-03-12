@@ -1,14 +1,15 @@
 import { AppData } from '@/constants/Data';
 import { PdfSource } from '@/constants/PdfSource';
 import { serializeData } from '@/hooks/serializeData';
-import { Stack, useLocalSearchParams } from 'expo-router';
+import { Stack, useLocalSearchParams, useNavigation } from 'expo-router';
 import { Dimensions, StyleSheet, View, Text } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Pdf from 'react-native-pdf';
+import { getParamsByPage } from '@/hooks/getParamsByPage';
 
 
 export default function AlgoScreen() {
-
+  const navigation = useNavigation();
   const params = useLocalSearchParams();
   const { key, pages, title } = params as { key?: string, pages: string, title?: string };
   let algoData: any = {};
@@ -16,7 +17,7 @@ export default function AlgoScreen() {
   if (key) {
     algoData = serializeData(AppData.sections)[key];
   }
-  const splitPages = pages.split(',');
+  const splitPages = pages.split(',').map((value: string) => { return parseInt(value)});
 
   return (
     <View style={styles.container}>
@@ -33,21 +34,28 @@ export default function AlgoScreen() {
         trustAllCerts={false}
         source={PdfSource}
         style={styles.pdf}
-        page={parseInt(splitPages[0])}
+        page={splitPages[0]}
         enablePaging={true}
         horizontal={true}
-        onLoadComplete={(numberOfPages) => {
-          console.log(`Number of pages: ${numberOfPages}`);
-        }}
-        onPageChanged={(page) => {
-          console.log(`Current page: ${page}`);
-          console.log('page', page);
-        }}
         onError={(error) => {
           console.log(error);
         }}
-        onPressLink={(uri) => {
-          console.log(`Link pressed: ${uri}`);
+        onPageChanged={(page: number) => {
+          let sameChapter: boolean = false;
+
+          if (splitPages.length > 1) {
+            sameChapter = splitPages[0] <= page && splitPages[1] >= page;
+          } else {
+            sameChapter = splitPages[0] === page;
+          }
+
+          if (!sameChapter) {
+            const paramsByPageNumber : Array<any>= getParamsByPage(page);
+
+            if (paramsByPageNumber[0]) {
+              navigation.setOptions({ title: paramsByPageNumber[1] });
+            }
+          }
         }}
       ></Pdf>
       <View style={styles.infoBox}>

@@ -1,7 +1,6 @@
 import { FlatList, StyleSheet, View, Text } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { AppData } from '@/constants/Data';
+import {  AppData } from '@/constants/Data';
 import { DrugListItem } from '@/components/DrugListItem';
 
 export default function DrugsScreen() {
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   list: {
-    padding: 8,
+    paddingBottom: 11,
   }
 });
 

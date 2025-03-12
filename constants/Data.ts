@@ -235,7 +235,7 @@ export const AppData = {
         {
           title: 'Neugeborenenversorgung',
           pediatricKeyId: 'pG2',
-          pages: [[102, 104]]
+          pages: [[], [102, 104]]
         },
         {
           keyId: 'G3',
