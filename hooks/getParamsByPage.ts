@@ -33,10 +33,15 @@ export const getParamsByPage = (pageAfterChange: number) => {
             return found;
         });
     } else {
+        AppData.drugs.some((drug) => {
+            if (pageAfterChange === drug.page) {
+                title = drug.title;
+                found = true;
+            }
 
+            return found;
+        })
     }
-
-    console.log('found', found, 'tite', title);
 
     return [found, title];
 }
