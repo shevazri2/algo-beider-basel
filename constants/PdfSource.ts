@@ -1,1 +1,1 @@
-export const PdfSource = { uri: 'bundle-assets://Algorithmen.pdf' };
+export const PdfSource = require('./assets/Algorithmen.pdf');
