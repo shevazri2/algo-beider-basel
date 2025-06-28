@@ -4,6 +4,31 @@ import { ThemeColors } from '@/constants/Colors';
 
 const changelogData = [
   {
+    title: 'Version 1.3 - 01.07.2025',
+    data: [
+      {
+        title: 'Algorithmus pE1 - Analgesie Pädiatrie',
+        subitems: ['Änderung Paracetamoldosierung für pädiatrische Patient:innen'],
+      },
+      {
+        title: 'Algorithmus E6 - Terminale Situation',
+        subitems: ['Neuer Algorithmus inkl. Fachinformation. Der Algorithmus wurde bewusst schlank gehalten und eine Tabelle mit Dosierungsideen in die Fachinformation übernommen. Zusätzlich wurde mit diesen möglichen Dosierungen ein Verordnungsblatt «terminale Situation» erstellt, das bei den Rettungsdiensten vorgehalten wird und vom Notarzt ausgefüllt werden kann.'],
+      },
+      {
+        title: 'Spitalliste Z8',
+        subitems: ['Auswahl Zielklinik: Tabelle aktualisiert und neu in die Algorithmen eingefügt. Um Querformat zu vermeiden wurde die Tabelle auf 2 Seiten verteilt.'],
+      },
+      {
+        title: 'Algorithmus pC2 - ROSC Pädiatrie',
+        subitems: ['Anpassung der Dosierung von Paracetamol für pädiatrische Patient:innen'],
+      },
+      {
+        title: 'Algorithmus pE4 - Sepsis / Septischer Schock Pädiatrie',
+        subitems: ['Anpassung der Dosierung von Paracetamol für pädiatrische Patient:innen'],
+      }
+    ]
+  },
+  {
     title: 'Version 1.1 - 07.10.24',
     data: [
       {
@@ -36,8 +61,8 @@ export default function InfoScreen() {
         }}
       />
       <View style={styles.versionInfo}>
-        <Text style={styles.versionLabel}>Algorithmen-Version: 1.1</Text>
-        <Text style={styles.versionLabel}>App-Version: 1.0.0</Text>
+        <Text style={styles.versionLabel}>Algorithmen-Version: 1.3</Text>
+        <Text style={styles.versionLabel}>App-Version: 1.1.0</Text>
       </View>
       <View>
         <Image style={{flex: 1, width: Dimensions.get('window').width, paddingTop: '40%'}}
