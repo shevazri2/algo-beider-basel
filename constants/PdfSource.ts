@@ -1,1 +1,1 @@
-export const PdfSource = require('./assets/Algorithmen.pdf');
+export const PdfSource = require('../assets/Algorithmen.pdf');
