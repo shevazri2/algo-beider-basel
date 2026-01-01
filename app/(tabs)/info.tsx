@@ -4,6 +4,47 @@ import { ThemeColors } from '@/constants/Colors';
 
 const changelogData = [
   {
+    title: 'Version 1.4 - 01.01.2026',
+    data: [
+      {
+        title: 'Algorithmus C1 - Reanimation Erwachsene',
+        subitems: ['Pre-Charging vor jeder Rhythmusanalyse eingefügt',
+          'Vector Chnage bei 3. erfolgloser Defibrillation',
+          'Zielwert für das etCO2 unter Reanimation erhöht',
+          'Weitere Fachinformation hinzugefügt',
+        ],
+      },
+      {
+        title: 'Algorithmus C2 - ROSC',
+        subitems: ['Temperaturwert für eine Antipyrese nach Reanimation auf >37.5°C angepasst'],
+      },
+      {
+        title: 'Algorithmus C3 - Bradykardie',
+        subitems: ['Entscheidungskasten bezüglich bedrohlicher Symptome mit ROSC ergänzt',
+          'Der Entscheidungskasten Asystolie-Risiko wurde als erwäge zur elektrischen/medikamentösen Therapie weitergeleitet',
+          'Keine Atropin-Gabe bei höhergradiger AV-Blockierung'
+        ]
+      },
+      {
+        title: 'Algorithmus pC1 - Reanimation Pädiatrie',
+        subitems: ['Pre-Charging vor jeder Rhythmusanalyse eingefügt',
+          'Vector Change bei 3. erfolgloser Defibrillation',
+          'Zielwert für das etCO2 unter Reanimation erhöht',
+          'Bei Säuglingen entfällt die 2-Finger-Technik für die Thoraxkompressionen. Neu wird nur noch die 2-Daumen-Technik empfohlen.',
+          'Für die Stufenweise Steiergung der Defibrillationsenergie wurde das persistierende Kammerflimmern/PVT ergänzt'
+        ],
+      },
+      {
+        title: 'Algorithmus Z2 - Fürsorgerische Unterbringung',
+        subitems: ['Die telefonische Kontaktaufnahme für den Kanton Aargau wurde angefügt'],
+      },
+      {
+        title: 'Algorithmus Z8 - Spitalliste',
+        subitems: ['Neu ist das Felix-Platter-Spital in der Spitalliste aufgeführt. Gleichzeitig haben wir die Fachdisziplin Urologie angefügt.'],
+      }
+    ]
+  },
+  {
     title: 'Version 1.3 - 01.07.2025',
     data: [
       {
@@ -61,7 +102,7 @@ export default function InfoScreen() {
         }}
       />
       <View style={styles.versionInfo}>
-        <Text style={styles.versionLabel}>Algorithmen-Version: 1.3</Text>
+        <Text style={styles.versionLabel}>Algorithmen-Version: 1.4</Text>
         <Text style={styles.versionLabel}>App-Version: 1.1.0</Text>
       </View>
       <View>
