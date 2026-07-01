@@ -4,6 +4,27 @@ import { ThemeColors } from '@/constants/Colors';
 
 const changelogData = [
   {
+    title: 'Version 1.5 - 01.07.2026',
+    data: [
+      {
+        title: 'Algorithmus B2 - Inhalationstrauma',
+        subitems: [
+          'Tabellarische Darstellung und Anpassung der CO-Grenzwerten zum Schutz der Mitarbeiter/-innen (inkl. Massnahmen)'
+        ]
+      },
+      {
+        title: 'Algorithmus E1 - Analgesie',
+        subitems: [
+          'Ergänzung: Ketamin sollte gründsätzlich in Kombination mit Midazolam oder Fentanyl appliziert werden. Eine Monotherapie mit Ketamin kann in bestimmten Fällen indiziert sein (z.B. ältere Patient:innen / delirgefährdete Patient:innen)'
+        ]
+      },
+      {
+        title: 'Algorithmus Z2 - Fürsorgerische Unterbringung',
+        subitems: ['Neu: Der schriftliche FU-Antrag wird im Kanton BL neu in der Zielklinik ausgefüllt']
+      }
+    ],
+  },
+  {
     title: 'Version 1.4 - 01.01.2026',
     data: [
       {
@@ -102,7 +123,7 @@ export default function InfoScreen() {
         }}
       />
       <View style={styles.versionInfo}>
-        <Text style={styles.versionLabel}>Algorithmen-Version: 1.4</Text>
+        <Text style={styles.versionLabel}>Algorithmen-Version: 1.5</Text>
         <Text style={styles.versionLabel}>App-Version: 1.1.0</Text>
       </View>
       <View>
